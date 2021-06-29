@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package db;
+
+option go_package = "app-protopb/db";
+
+import "user.proto";
+import "otp.proto";
+
+service DbService {
+  rpc Register(UserRequest) returns (UserResponse) {};
+  rpc StoreOpt(OtpRequest) returns (OtpResponse){};
+  rpc ValidateOtp(ValidateOtpRequest) returns (ValidateOtpResponse){};
+}

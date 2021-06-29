@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package db;
+
+option go_package = "app-protopb/db";
+
+message OtpRequest {
+  string code = 1;
+  string message = 2;
+  string user_id = 3;
+  string expiry_date = 4;
+}
+
+message OtpResponse {
+  string message = 1;
+}
+
+message ValidateOtpRequest {
+  string user_id = 1;
+  string otp_code = 2;
+}
+
+message ValidateOtpResponse {
+  bool is_valid = 1;
+  string message = 2; // is_valid ? Validated : Invalid;
+}

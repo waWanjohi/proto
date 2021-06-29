@@ -1,0 +1,20 @@
+syntax = "proto3"; //latest
+
+package db;
+
+option go_package = "app-protopb/db";
+
+message UserResponse {
+  string id = 1;
+  string name = 2;
+  string handle = 3;
+  string phone_number = 4;
+  string email = 5;
+}
+
+message UserRequest {
+  string name = 1;
+  string handle = 2;
+  string email = 3;
+  string phone_number = 4;
+}
